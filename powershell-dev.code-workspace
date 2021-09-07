@@ -1,0 +1,23 @@
+{
+	"folders": [
+		{
+			"path": "scripts"
+		},
+		//{
+		//	"path": "."
+		//}
+	],
+	"settings": {
+		"files.encoding": "utf8bom",
+		"files.autoGuessEncoding": true,
+		"files.defaultLanguage": "powershell",
+		"files.autoSave": "afterDelay",
+		"files.autoSaveDelay": 5000,
+		"editor.formatOnPaste": true,
+		"editor.formatOnType": true,
+		"editor.formatOnSave": true,
+		"breadcrumbs.enabled": true,
+		"debug.inlineValues": true,
+		"powershell.scriptAnalysis.settingsPath": "./../PSScriptAnalyzerSettings.psd1"
+	}
+}

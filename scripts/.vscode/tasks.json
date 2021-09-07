@@ -1,0 +1,85 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "build-ps-native-noconsole",
+            "type": "process",
+            "command": "powershell",
+            "args": [
+                "-nop",
+                "-ep",
+                "ByPass",
+                "${workspaceFolder}\\..\\.build\\ps2exe.ps1",
+                "${file}",
+                "${fileDirname}\\${fileBasenameNoExtension}_$((Get-Date -Format FileDate).ToString()).exe",
+                "-iconFile",
+                "${workspaceFolder}\\..\\.build\\icons\\powershell.ico",
+                "-runtime40",
+                "-noconfig",
+                "-noConsole"
+            ],
+            "group": "build",
+            "problemMatcher": []
+        },
+        {
+            "label": "build-ps-native-debug",
+            "type": "process",
+            "command": "powershell",
+            "args": [
+                "-nop",
+                "-ep",
+                "ByPass",
+                "${workspaceFolder}\\..\\.build\\ps2exe.ps1",
+                "${file}",
+                "${fileDirname}\\${fileBasenameNoExtension}_$((Get-Date -Format FileDate).ToString()).exe",
+                "-iconFile",
+                "${workspaceFolder}\\..\\.build\\icons\\powershell.ico",
+                "-runtime40",
+                "-noconfig",
+                "-debug"
+            ],
+            "group": "build",
+            "problemMatcher": []
+        },
+        {
+            "label": "build-ps-native-default",
+            "type": "process",
+            "command": "powershell",
+            "args": [
+                "-nop",
+                "-ep",
+                "ByPass",
+                "${workspaceFolder}\\..\\.build\\ps2exe.ps1",
+                "${file}",
+                "${fileDirname}\\${fileBasenameNoExtension}_$((Get-Date -Format FileDate).ToString()).exe",
+                "-iconFile",
+                "${workspaceFolder}\\..\\.build\\icons\\powershell.ico",
+                "-noconfig"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "build-ps-module",
+            "type": "process",
+            "command": "powershell",
+            "args": [
+                "-nop",
+                "-ep",
+                "ByPass",
+                "${workspaceFolder}\\..\\.build\\create_module.ps1",
+                "-in_File",
+                "${file}",
+                "-out_File",
+                "${fileDirname}\\${fileBasenameNoExtension}_$((Get-Date -Format FileDate).ToString()).module"
+            ],
+            "group": "build",
+            "problemMatcher": []
+        }
+    ]
+}
